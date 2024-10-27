@@ -1,0 +1,431 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhtqwyl6pvu1u"]
+
+[ext_resource type="Texture2D" uid="uid://dtqbt68nipuoq" path="res://assets/sprites/arts/Board.png" id="1_kkd5c"]
+[ext_resource type="Script" path="res://scenes/main_level/updateHUD.gd" id="1_m0574"]
+[ext_resource type="PackedScene" uid="uid://5u5hvufegbht" path="res://scenes/ball/ball.tscn" id="2_rkygx"]
+[ext_resource type="PackedScene" uid="uid://diwtmtng4ldj" path="res://scenes/left_player/left_player.tscn" id="3_y52b6"]
+[ext_resource type="Texture2D" uid="uid://dd0ruvidevts8" path="res://assets/sprites/arts/ScoreBar.png" id="5_7cwqc"]
+[ext_resource type="PackedScene" uid="uid://c3h08hnpubbei" path="res://scenes/right_player/right_player.tscn" id="6_gmhxy"]
+[ext_resource type="FontFile" uid="uid://bq55484bg2f8s" path="res://assets/sprites/fonts/Teko-VariableFont_wght.ttf" id="6_qcxoa"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_udtri"]
+b = Vector2(1152, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_x42j5"]
+a = Vector2(0, 2)
+b = Vector2(0, 602)
+
+[node name="MainLevel" type="Node2D"]
+script = ExtResource("1_m0574")
+ball_scene = ExtResource("2_rkygx")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(576.5, 323.25)
+scale = Vector2(1.43766, 1.42747)
+texture = ExtResource("1_kkd5c")
+
+[node name="ball" type="Node" parent="."]
+
+[node name="leftPlayer" type="Node" parent="."]
+
+[node name="LeftPlayer" parent="leftPlayer" instance=ExtResource("3_y52b6")]
+position = Vector2(20, 286)
+
+[node name="HUD" type="Node" parent="."]
+
+[node name="rightScore" type="Node" parent="HUD"]
+
+[node name="rightScore" type="Sprite2D" parent="HUD/rightScore"]
+position = Vector2(897.845, 21)
+scale = Vector2(1.5141, 0.959149)
+texture = ExtResource("5_7cwqc")
+flip_h = true
+
+[node name="LbRightScore" type="Label" parent="HUD/rightScore"]
+_import_path = NodePath("")
+unique_name_in_owner = true
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 676.0
+offset_top = -3.0
+offset_right = 786.0
+offset_bottom = 55.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.0
+auto_translate = true
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qcxoa")
+theme_override_font_sizes/font_size = 40
+text = "0"
+label_settings = null
+horizontal_alignment = 2
+vertical_alignment = 0
+autowrap_mode = 0
+justification_flags = 163
+clip_text = false
+text_overrun_behavior = 0
+uppercase = false
+tab_stops = PackedFloat32Array()
+lines_skipped = 0
+max_lines_visible = -1
+visible_characters = -1
+visible_characters_behavior = 0
+visible_ratio = 1.0
+text_direction = 0
+language = ""
+structured_text_bidi_override = 0
+structured_text_bidi_override_options = []
+script = null
+
+[node name="leftScore" type="Node" parent="HUD"]
+
+[node name="leftScore" type="Sprite2D" parent="HUD/leftScore"]
+position = Vector2(257, 21)
+scale = Vector2(1.50733, 0.959149)
+texture = ExtResource("5_7cwqc")
+
+[node name="LbLeftScore" type="Label" parent="HUD/leftScore"]
+_import_path = NodePath("")
+unique_name_in_owner = true
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 364.0
+offset_top = -3.0
+offset_right = 474.0
+offset_bottom = 55.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.0
+auto_translate = true
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_qcxoa")
+theme_override_font_sizes/font_size = 40
+text = "0"
+label_settings = null
+horizontal_alignment = 0
+vertical_alignment = 0
+autowrap_mode = 0
+justification_flags = 163
+clip_text = false
+text_overrun_behavior = 0
+uppercase = false
+tab_stops = PackedFloat32Array()
+lines_skipped = 0
+max_lines_visible = -1
+visible_characters = -1
+visible_characters_behavior = 0
+visible_ratio = 1.0
+text_direction = 0
+language = ""
+structured_text_bidi_override = 0
+structured_text_bidi_override_options = []
+script = null
+
+[node name="LbTime" type="Label" parent="HUD"]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 475.0
+offset_top = -7.0
+offset_right = 681.0
+offset_bottom = 40.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.0
+auto_translate = true
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_colors/font_color = Color(0.8, 0, 0.419608, 1)
+theme_override_fonts/font = ExtResource("6_qcxoa")
+theme_override_font_sizes/font_size = 32
+text = "TIME"
+label_settings = null
+horizontal_alignment = 1
+vertical_alignment = 0
+autowrap_mode = 0
+justification_flags = 163
+clip_text = false
+text_overrun_behavior = 0
+uppercase = false
+tab_stops = PackedFloat32Array()
+lines_skipped = 0
+max_lines_visible = -1
+visible_characters = -1
+visible_characters_behavior = 0
+visible_ratio = 1.0
+text_direction = 0
+language = ""
+structured_text_bidi_override = 0
+structured_text_bidi_override_options = []
+script = null
+
+[node name="LbTimeValue" type="Label" parent="HUD"]
+_import_path = NodePath("")
+unique_name_in_owner = true
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+editor_description = ""
+visible = true
+modulate = Color(1, 1, 1, 1)
+self_modulate = Color(1, 1, 1, 1)
+show_behind_parent = false
+top_level = false
+clip_children = 0
+light_mask = 1
+visibility_layer = 1
+z_index = 0
+z_as_relative = true
+y_sort_enabled = false
+texture_filter = 0
+texture_repeat = 0
+material = null
+use_parent_material = false
+clip_contents = false
+custom_minimum_size = Vector2(0, 0)
+layout_direction = 0
+layout_mode = 3
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 474.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 44.0
+grow_horizontal = 1
+grow_vertical = 1
+rotation = 0.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(0, 0)
+size_flags_horizontal = 1
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.0
+auto_translate = true
+localize_numeral_system = true
+tooltip_text = ""
+focus_neighbor_left = NodePath("")
+focus_neighbor_top = NodePath("")
+focus_neighbor_right = NodePath("")
+focus_neighbor_bottom = NodePath("")
+focus_next = NodePath("")
+focus_previous = NodePath("")
+focus_mode = 0
+mouse_filter = 2
+mouse_force_pass_scroll_events = true
+mouse_default_cursor_shape = 0
+theme = null
+theme_type_variation = &""
+theme_override_fonts/font = ExtResource("6_qcxoa")
+theme_override_font_sizes/font_size = 20
+text = "00 : 00"
+label_settings = null
+horizontal_alignment = 1
+vertical_alignment = 0
+autowrap_mode = 0
+justification_flags = 163
+clip_text = false
+text_overrun_behavior = 0
+uppercase = false
+tab_stops = PackedFloat32Array()
+lines_skipped = 0
+max_lines_visible = -1
+visible_characters = -1
+visible_characters_behavior = 0
+visible_ratio = 1.0
+text_direction = 0
+language = ""
+structured_text_bidi_override = 0
+structured_text_bidi_override_options = []
+script = null
+
+[node name="Timer" type="Timer" parent="HUD"]
+autostart = true
+
+[node name="rightPlayer" type="Node" parent="."]
+
+[node name="RightPlayer" parent="rightPlayer" instance=ExtResource("6_gmhxy")]
+position = Vector2(1132, 283)
+
+[node name="border" type="Node" parent="."]
+
+[node name="top" type="StaticBody2D" parent="border"]
+position = Vector2(0, 43)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/top"]
+position = Vector2(0, 1)
+shape = SubResource("SegmentShape2D_udtri")
+
+[node name="bottom" type="StaticBody2D" parent="border"]
+position = Vector2(0, 646)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/bottom"]
+shape = SubResource("SegmentShape2D_udtri")
+
+[node name="left" type="Area2D" parent="border"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/left"]
+position = Vector2(0, 43)
+shape = SubResource("SegmentShape2D_x42j5")
+
+[node name="right" type="Area2D" parent="border"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="border/right"]
+position = Vector2(1153, 43)
+shape = SubResource("SegmentShape2D_x42j5")
+
+[node name="SpawerBall" type="Marker2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(575, 322)
+
+[connection signal="timeout" from="HUD/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="border/left" to="." method="_on_left_body_entered"]
+[connection signal="body_entered" from="border/right" to="." method="_on_right_body_entered"]
